@@ -4,7 +4,10 @@ import "./globals.css";
 import Navbar from "@/navbar/Navbar";
 import Footer from "@/footer/Footer";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ 
+  subsets: ["latin"],
+  weight: ["700", "800"], 
+});
 
 export const metadata: Metadata = {
   title: "Click.com",
@@ -20,10 +23,12 @@ export default function RootLayout({
     <html lang="en">
       <head>
       </head>
-      <body className={inter.className}>
-        <Navbar />
-        <main>{children}</main>
-        <Footer />
+      <body className={`${inter.className}`}>
+        <div className="flex flex-col min-h-screen">
+          <Navbar />
+          <main className="flex-grow">{children}</main>
+          <Footer />
+        </div>
       </body>
     </html>
   );
