@@ -4,7 +4,10 @@ import "./globals.css";
 import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/footer/Footer";
 
-const josefinSans = Josefin_Sans({ subsets: ["latin"], weight: ["700", "700"] });
+const josefinSans = Josefin_Sans({
+  subsets: ["latin"],
+  weight: ["700", "700"],
+});
 
 export const metadata: Metadata = {
   title: "Click.com",
