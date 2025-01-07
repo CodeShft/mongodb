@@ -1,5 +1,6 @@
+"use client"
 const Search = () => {
-  return <div>Search</div>;
+  return <div className="flex fşex-1">Search</div>;
 };
 
 export default Search;

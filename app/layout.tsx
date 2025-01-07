@@ -1,10 +1,10 @@
 import { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Josefin_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/footer/Footer";
 
-const inter = Inter({ subsets: ["latin"], weight: ["700", "800"] });
+const josefinSans = Josefin_Sans({ subsets: ["latin"], weight: ["700", "700"] });
 
 export const metadata: Metadata = {
   title: "Click.com",
@@ -21,7 +21,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-gray-50 text-gray-900`}>
+      <body className={`${josefinSans.className} bg-gray-50 text-gray-900`}>
         <div className="flex flex-col min-h-screen">
           <header className="w-full fixed top-0 left-0 z-10">
             <Navbar />
