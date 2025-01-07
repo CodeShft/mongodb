@@ -34,7 +34,7 @@ export default function RootLayout({
             {children}
           </main>
 
-          <footer className="bg-purple-400 text-center py-4 fixed bottom-0 left-0 right-0 md:relative md:bottom-auto">
+          <footer className="bg-orange-600 text-center py-4 fixed bottom-0 left-0 right-0 md:relative md:bottom-auto">
             <Footer />
           </footer>
         </div>
