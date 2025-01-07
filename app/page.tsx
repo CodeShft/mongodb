@@ -1,7 +1,3 @@
-
 export default function Home() {
-return(
-<div>Anasayfa</div>
-
-)
+  return <div>Anasayfa</div>;
 }

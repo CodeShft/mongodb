@@ -1,9 +1,5 @@
-
-
 const HamburgerMenu = () => {
-  return (
-    <div>HamburgerMenu</div>
-  )
-}
+  return <div>HamburgerMenu</div>;
+};
 
-export default HamburgerMenu
+export default HamburgerMenu;

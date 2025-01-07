@@ -1,9 +1,5 @@
-
-
 const CardCount = () => {
-  return (
-    <div>CardCount</div>
-  )
-}
+  return <div>CardCount</div>;
+};
 
-export default CardCount
+export default CardCount;
