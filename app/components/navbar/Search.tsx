@@ -19,7 +19,7 @@ const Search: React.FC = () => {
       className="flex items-center w-full md:w-auto relative"
     >
       <input
-        className="form-control py-2 px-4 rounded-lg focus:outline-none w-full sm:w-auto mr-4"
+        className="form-control py-2 px-4 rounded-lg focus:outline-none w-full sm:w-auto"
         type="search"
         placeholder="Search"
         aria-label="Search"
