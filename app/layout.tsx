@@ -23,18 +23,15 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.className} bg-gray-50 text-gray-900`}>
         <div className="flex flex-col min-h-screen">
-       
           <header className="w-full fixed top-0 left-0 z-10">
             <Navbar />
           </header>
 
-        
-          <main className="flex-grow pt-16 px-4 sm:px-6 lg:px-8">
+          <main className="flex-grow pt-16 px-4 sm:px-6 lg:px-8 pb-20 sm:pb-0">
             {children}
           </main>
 
-       
-          <footer className="bg-purple-400 text-center py-4">
+          <footer className="bg-purple-400 text-center py-4 fixed bottom-0 left-0 right-0 md:relative md:bottom-auto">
             <Footer />
           </footer>
         </div>
