@@ -3,9 +3,9 @@ const HamburgerMenu = () => {
     <div>
       <nav className="relative">
         <button className="hamburger md:hidden" aria-label="Toggle menu">
-          <span className="block w-6 h-1 bg-black mb-2"></span>
-          <span className="block w-6 h-1 bg-black mb-2"></span>
-          <span className="block w-6 h-1 bg-black"></span>
+          <span className="block w-6 h-1 bg-white mb-2"></span>
+          <span className="block w-6 h-1 bg-white mb-2"></span>
+          <span className="block w-6 h-1 bg-white"></span>
         </button>
 
         <div className="menu hidden md:flex">
