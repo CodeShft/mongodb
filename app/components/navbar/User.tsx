@@ -1,5 +1,5 @@
 const User = () => {
-  return <div>User</div>;
+  return <div className="hidden md:flex"></div>;
 };
 
 export default User;
