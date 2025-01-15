@@ -39,8 +39,8 @@ const Banner = () => {
               className={`absolute inset-0 flex items-center justify-center text-white font-bold bg-black bg-opacity-50 transform transition-all duration-1000 ease-in-out ${
                 activeImageIndex === index
                   ? "opacity-100 translate-y-0"
-                  : "opacity-0 translate-y-[10%]" // Yumuşak geçiş
-              } rounded-lg shadow-lg`} // Burada shadow ekleyerek daha yumuşak bir geçiş sağladık
+                  : "opacity-0 translate-y-[10%]"
+              } rounded-lg shadow-lg`}
             >
               <span className="text-[10px] sm:text-xs md:text-sm lg:text-lg xl:text-xl font-extrabold tracking-wider uppercase glowing-text text-center px-1 sm:px-2 md:px-3">
                 {image.sale}
