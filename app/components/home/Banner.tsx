@@ -36,9 +36,13 @@ const Banner = () => {
             className="h-[15vh] sm:h-[20vh] md:h-[25vh] lg:h-[30vh] xl:h-[35vh] w-[30%] flex-shrink-0 relative"
           >
             <div
-              className={`absolute inset-0 flex items-center justify-center text-white font-bold bg-black bg-opacity-50 transform transition-all duration-1000 ease-in-out ${activeImageIndex === index ? "opacity-100 translate-y-0" : "opacity-0 translate-y-full"}`}
+              className={`absolute inset-0 flex items-center justify-center text-white font-bold bg-black bg-opacity-50 transform transition-all duration-1000 ease-in-out ${
+                activeImageIndex === index
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-full"
+              } rounded-lg`}
             >
-              <span className="text-xs sm:text-sm md:text-lg lg:text-xl xl:text-2xl font-extrabold tracking-wider uppercase glowing-text text-center">
+              <span className="text-[10px] sm:text-xs md:text-sm lg:text-lg xl:text-xl font-extrabold tracking-wider uppercase glowing-text text-center px-1 sm:px-2 md:px-3">
                 {image.sale}
               </span>
             </div>
@@ -46,7 +50,7 @@ const Banner = () => {
             <img
               src={image.src}
               alt={`Banner ${index}`}
-              className="object-cover w-full h-full rounded-md shadow-md"
+              className="sm:object-cover w-full h-full rounded-md shadow-md"
             />
           </div>
         ))}
