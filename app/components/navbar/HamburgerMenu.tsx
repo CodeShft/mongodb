@@ -1,48 +1,88 @@
+"use client";
+
+import { useState } from "react";
+import Link from "next/link";
+
 const HamburgerMenu = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const handleMenuToggle = () => {
+    setIsMenuOpen(!isMenuOpen);
+    document.body.style.overflow = isMenuOpen ? "auto" : "hidden";
+  };
+
   return (
-    <div>
-      <nav className="relative">
-        <button className="hamburger md:hidden" aria-label="Toggle menu">
-          <span className="block w-6 h-1 bg-white mb-2"></span>
-          <span className="block w-6 h-1 bg-white mb-2"></span>
-          <span className="block w-6 h-1 bg-white"></span>
+    <>
+      <div className="relative">
+        <button
+          className={`hamburger relative flex flex-col justify-center items-center w-8 h-8 z-50 ${
+            isMenuOpen ? "active" : ""
+          } transition-all duration-300 ease-in-out`}
+          aria-label="Toggle menu"
+          onClick={handleMenuToggle}
+        >
+          <span
+            className={`hamburger-line transition-all duration-300 absolute block w-6 h-0.5 bg-white rounded-full ${
+              isMenuOpen ? "rotate-45 translate-y-1.5" : "-translate-y-2"
+            }`}
+          ></span>
+          <span
+            className={`hamburger-line transition-all duration-300 absolute block w-6 h-0.5 bg-white rounded-full ${
+              isMenuOpen ? "opacity-0" : "opacity-100"
+            }`}
+          ></span>
+          <span
+            className={`hamburger-line transition-all duration-300 absolute block w-6 h-0.5 bg-white rounded-full ${
+              isMenuOpen ? "-rotate-45 translate-y-1.5" : "translate-y-2"
+            }`}
+          ></span>
         </button>
 
-        <div className="menu hidden md:flex">
-          <ul className="flex space-x-6">
-            <li>
-              <a href="#">Home</a>
-            </li>
-            <li>
-              <a href="#">About</a>
-            </li>
-            <li>
-              <a href="#">Services</a>
-            </li>
-            <li>
-              <a href="#">Contact</a>
-            </li>
-          </ul>
-        </div>
+        <div
+          className={`fixed inset-0 bg-black bg-opacity-50 transition-opacity duration-300 ${
+            isMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"
+          }`}
+          style={{ zIndex: 40 }}
+          onClick={handleMenuToggle}
+        />
 
-        <div className="mobile-menu hidden absolute bg-white top-0 right-0 w-3/4 h-screen p-5">
-          <ul className="space-y-6">
-            <li>
-              <a href="#">Home</a>
-            </li>
-            <li>
-              <a href="#">About</a>
-            </li>
-            <li>
-              <a href="#">Services</a>
-            </li>
-            <li>
-              <a href="#">Contact</a>
-            </li>
-          </ul>
+        <div
+          className={`fixed top-16 right-0 h-[76vh] mb-0 overflow-y-auto w-[220px] bg-gradient-to-r from-[#ff6600] to-[#ff3300] text-white p-4 transform transition-transform duration-500 ease-in-out shadow-lg ${
+            isMenuOpen ? "translate-x-0" : "translate-x-full"
+          }`}
+          style={{ zIndex: 45 }}
+        >
+          <div className="flex flex-col h-full">
+            <div className="flex justify-between items-center mb-4 border-b border-white/30 pb-2 text-center">
+              <h2 className="text-lg font-bold w-full">Categories</h2>
+            </div>
+
+            <nav className="flex-1">
+              <ul className="space-y-3">
+                {[
+                  ["Stilettos", "/stilettos"],
+                  ["Wedge Heels", "/wedge-heels"],
+                  ["Kitten Heels", "/kitten-heels"],
+                  ["Block Heels", "/block-heels"],
+                  ["Cowboy Heels", "/cowboy-heels"],
+                  ["Booties", "/booties"],
+                ].map(([title, url]) => (
+                  <li key={url}>
+                    <Link
+                      href={url}
+                      onClick={() => setIsMenuOpen(false)}
+                      className="block py-3 px-4 text-sm font-medium text-center bg-orange-700 border border-white/10 hover:border-white/50 transition-all duration-300 hover:bg-orange-400 hover:text-white rounded-md focus:bg-orange-500 focus:border-orange-300 active:bg-orange-600 shadow-sm"
+                    >
+                      {title}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          </div>
         </div>
-      </nav>
-    </div>
+      </div>
+    </>
   );
 };
 

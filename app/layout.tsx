@@ -11,7 +11,7 @@ const josefinSans = Josefin_Sans({
 
 export const metadata: Metadata = {
   title: "Click.com",
-  description: "Discover amazing products and services on Click.com",
+  description: "Discover amazing shoes on Click.com",
   icons: {
     icon: "https://icones.pro/wp-content/uploads/2021/06/cliquez-sur-le-symbole-orange.png",
   },
@@ -24,20 +24,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${josefinSans.className} bg-gray-50 text-gray-900`}>
-        <div className="flex flex-col min-h-screen">
-          <header className="w-full fixed top-0 left-0 z-10">
-            <Navbar />
-          </header>
-
-          <main className="flex-grow pt-16 px-2 sm:px-4 lg:px-6 pb-20 sm:pb-0">
-            {children}
-          </main>
-
-          <footer className="bg-orange-600 text-center py-4 fixed bottom-0 left-0 right-0 md:relative md:bottom-auto">
-            <Footer />
-          </footer>
-        </div>
+      <body className={`${josefinSans.className} flex flex-col min-h-screen`}>
+        <Navbar />
+        <main className="flex-grow pt-16">{children}</main>
+        <Footer />
       </body>
     </html>
   );

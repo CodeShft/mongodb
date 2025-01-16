@@ -8,7 +8,7 @@ const Logo = () => {
             "polygon(50% 0%, 60% 15%, 80% 15%, 100% 30%, 90% 50%, 100% 70%, 80% 85%, 60% 85%, 50% 95%, 40% 85%, 20% 85%, 0% 70%, 10% 50%, 0% 30%, 20% 15%, 40% 15%)",
         }}
       >
-        <span className="text-black text-4xl font-extrabold tracking-tight">
+        <span className="text-gray-200 text-4xl font-extrabold tracking-tight">
           Click
           <span className="text-gray-900 px-1 py-1 rounded-md text-xl">
             .com

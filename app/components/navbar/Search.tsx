@@ -16,10 +16,10 @@ const Search: React.FC = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex items-center w-full md:w-auto relative"
+      className="flex items-center relative w-full md:w-auto"
     >
       <input
-        className="form-control py-2 px-4 rounded-lg focus:outline-none w-full sm:w-auto"
+        className="form-control py-2 px-4 rounded-lg focus:outline-none w-full sm:w-auto md:ml-0 sm:ml-4"
         type="search"
         placeholder="Search"
         aria-label="Search"
