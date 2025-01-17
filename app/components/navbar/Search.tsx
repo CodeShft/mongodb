@@ -16,7 +16,7 @@ const Search: React.FC = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex items-center relative w-full sm:w-auto md:w-auto ml-auto mr-6"
+      className="flex items-center relative w-full sm:w-auto ml-0 mr-6"
     >
       <input
         className="form-control py-2 px-4 rounded-lg focus:outline-none w-full sm:w-56 md:w-auto"

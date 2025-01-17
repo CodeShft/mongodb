@@ -62,7 +62,6 @@ const HamburgerMenu = () => {
                 {[
                   ["Stilettos", "/stilettos"],
                   ["Wedge Heels", "/wedge-heels"],
-                  ["Kitten Heels", "/kitten-heels"],
                   ["Block Heels", "/block-heels"],
                   ["Cowboy Heels", "/cowboy-heels"],
                   ["Booties", "/booties"],

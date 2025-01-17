@@ -28,30 +28,32 @@ const Banner = () => {
   }, [images.length]);
 
   return (
-    <div className="w-full flex justify-center overflow-hidden py-4">
-      <div className="w-[90%] max-w-[1200px] flex gap-4 justify-between flex-wrap">
+    <div className="w-full flex justify-center overflow-hidden py-3">
+      <div className="w-[95%] max-w-[1200px] grid grid-cols-3 gap-2">
         {images.map((image, index) => (
           <div
             key={index}
-            className="h-[15vh] sm:h-[20vh] md:h-[25vh] lg:h-[30vh] xl:h-[35vh] w-[30%] flex-shrink-0 relative"
+            className="relative rounded-md shadow-sm overflow-hidden"
           >
             <div
               className={`absolute inset-0 flex items-center justify-center text-white font-bold bg-black bg-opacity-50 transform transition-all duration-1000 ease-in-out ${
                 activeImageIndex === index
                   ? "opacity-100 translate-y-0"
-                  : "opacity-0 translate-y-[10%]" 
-              } rounded-lg shadow-lg`} 
+                  : "opacity-0 translate-y-[10%]"
+              }`}
             >
-              <span className="text-[10px] sm:text-xs md:text-sm lg:text-lg xl:text-xl font-extrabold tracking-wider uppercase glowing-text text-center px-1 sm:px-2 md:px-3">
+              <span className="text-[8px] sm:text-xs md:text-sm lg:text-base font-extrabold tracking-wide uppercase text-center px-1">
                 {image.sale}
               </span>
             </div>
 
-            <img
-              src={image.src}
-              alt={`Banner ${index}`}
-              className="sm:object-cover w-full h-full rounded-md shadow-md"
-            />
+            <div className="aspect-w-4 aspect-h-3">
+              <img
+                src={image.src}
+                alt={`Banner ${index}`}
+                className="w-full h-full object-cover"
+              />
+            </div>
           </div>
         ))}
       </div>
