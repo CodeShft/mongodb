@@ -10,7 +10,13 @@ const Search: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log("Arama Terimi: ", query);
+    if (query.trim()) {
+      console.log("Arama Terimi: ", query);
+
+      window.location.href = `/search?query=${encodeURIComponent(query)}`;
+    } else {
+      console.log("Lütfen bir arama terimi giriniz.");
+    }
   };
 
   return (
