@@ -78,10 +78,10 @@ const stilettos = () => {
                 className="absolute top-0 left-0 w-full h-full object-cover rounded-md"
               />
             </div>
-            <h3 className="text-xs font-semibold text-gray-700 mt-1.5">
+            <h3 className="text-sm font-semibold text-gray-700 mt-2">
               {card.name}
             </h3>
-            <p className="text-[9px] text-gray-500">Detail for {card.name}</p>
+            <p className="text-[11px] text-gray-500">Detail for {card.name}</p>
           </div>
         ))}
       </div>
