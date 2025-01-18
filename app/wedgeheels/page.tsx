@@ -5,8 +5,8 @@ const WedgeHeels: React.FC = () => {
   const cards = [
     {
       image:
-        "https://www.cicinia.com/cdn/shop/files/1_43281156-235b-4f6d-8f33-e8af0f3c0140.jpg?v=1713260350",
-      name: "Dream Red",
+        "https://i.ebayimg.com/images/g/BWIAAOSwEONjmZ0l/s-l400.jpg",
+      name: "Orange Dream",
     },
     {
       image:
@@ -30,7 +30,7 @@ const WedgeHeels: React.FC = () => {
     },
     {
       image:
-        "https://target.scene7.com/is/image/Target/GUEST_c132610b-8a24-497b-8d01-369b6c9cab68?wid=488&hei=488&fmt=pjpeg",
+        "https://target.scene7.com/is/image/Target/GUEST_9c50f71e-006a-4ed4-8a9f-355338b1ed61?wid=488&hei=488&fmt=pjpeg",
       name: "Sparkling",
     },
     {
@@ -54,7 +54,7 @@ const WedgeHeels: React.FC = () => {
     },
     {
       image:
-        "https://i.pinimg.com/originals/a7/6a/6c/a76a6c10f2dade4606d2ab0a61a691e3.jpg",
+        "https://target.scene7.com/is/image/Target/GUEST_968a738f-9820-423e-90b2-3936d688820f?qlt=65&fmt=pjpeg&hei=350&wid=350",
       name: "Yellow",
     },
     {
