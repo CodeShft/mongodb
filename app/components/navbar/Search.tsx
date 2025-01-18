@@ -12,7 +12,6 @@ const Search: React.FC = () => {
     e.preventDefault();
     if (query.trim()) {
       console.log("Arama Terimi: ", query);
-
       window.location.href = `/search?query=${encodeURIComponent(query)}`;
     } else {
       console.log("Lütfen bir arama terimi giriniz.");
@@ -22,10 +21,10 @@ const Search: React.FC = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex items-center relative w-full sm:w-auto ml-0 mr-6"
+      className="flex items-center relative w-full sm:w-full md:w-72 ml-0 mr-6"
     >
       <input
-        className="form-control py-2 px-4 rounded-lg focus:outline-none w-full sm:w-56 md:w-auto"
+        className="form-control py-2 px-4 rounded-lg focus:outline-none w-full sm:w-full md:w-auto"
         type="search"
         placeholder="Search"
         aria-label="Search"

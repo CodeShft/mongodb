@@ -61,9 +61,9 @@ const HamburgerMenu = () => {
               <ul className="space-y-3">
                 {[
                   ["Stilettos", "/stilettos"],
-                  ["Wedge Heels", "/wedge-heels"],
-                  ["Block Heels", "/block-heels"],
-                  ["Cowboy Heels", "/cowboy-heels"],
+                  ["Wedge Heels", "/wedgeheels"],
+                  ["Block Heels", "/blockheels"],
+                  ["Cowboy Heels", "/cowboyheels"],
                   ["Booties", "/booties"],
                 ].map(([title, url]) => (
                   <li key={url}>
