@@ -64,23 +64,27 @@ const stilettos = () => {
   ];
 
   return (
-    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 p-4">
-      {cards.map((card, index) => (
-        <div
-          key={index}
-          className="bg-white border border-gray-400 rounded-lg p-2 flex flex-col items-center"
-        >
-          <img
-            src={card.image}
-            alt={`Stiletto ${index + 1}`}
-            className="w-full h-40 object-cover rounded-md"
-          />
-          <h3 className="text-lg font-semibold text-gray-700 mt-2">
-            {card.name}
-          </h3>
-          <p className="text-sm text-gray-500">Detail for {card.name}</p>
-        </div>
-      ))}
+    <div className="max-h-screen overflow-auto p-4">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-2.5">
+        {cards.map((card, index) => (
+          <div
+            key={index}
+            className="bg-white border border-gray-400 rounded-lg p-1 flex flex-col items-center transform transition-transform duration-300 hover:scale-95"
+          >
+            <div className="w-full relative pb-[90%]">
+              <img
+                src={card.image}
+                alt={`Stiletto ${index + 1}`}
+                className="absolute top-0 left-0 w-full h-full object-cover rounded-md"
+              />
+            </div>
+            <h3 className="text-xs font-semibold text-gray-700 mt-1.5">
+              {card.name}
+            </h3>
+            <p className="text-[9px] text-gray-500">Detail for {card.name}</p>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
