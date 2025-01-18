@@ -30,12 +30,12 @@ const stilettos = () => {
     },
     {
       image:
-        "https://cdn.staticans.com/image/tr:e-sharpen-01,h-1440,w-1920,cm-pad_resize/data/Regal-Shoes/10-may-2023/9093386_3.jpg",
+        "https://cihanpazarlama.com.tr/content/2023-bahar-kad%C4%B1n-y%C3%BCksek-topuklu-siyah-parlak-pompalar%C4%B1-3-92394.jpeg",
       name: "Sparkling",
     },
     {
       image:
-        "https://media.dunelondon.com/image/upload/b_rgb:FFFFFF,c_pad,dpr_2.0,f_auto,g_center,h_500,q_auto,w_500/t_dl_medium_square2/c_pad,h_500,w_500/v1/products/AMINA-0085503940053221_Side?pgw=1",
+        "https://static.ticimax.cloud/cdn-cgi/image/width=-,quality=85/48000/uploads/urunresimleri/buyuk/gusse-cole-kadin-stiletto-ayakkabi-201-9-4a29.jpg",
       name: "Pink",
     },
     {

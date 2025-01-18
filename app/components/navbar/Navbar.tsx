@@ -1,9 +1,10 @@
 "use client";
 import Logo from "./Logo";
-import Search from "./Search";
+
 import User from "./User";
 import HamburgerMenu from "./HamburgerMenu";
 import Link from "next/link";
+import Search from "@/app/Search";
 
 const Navbar: React.FC = () => {
   return (
