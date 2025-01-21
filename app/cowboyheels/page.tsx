@@ -39,7 +39,8 @@ const cowboyheels: React.FC = () => {
       name: "Brown Eye",
     },
     {
-      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1HoPrEJipgTyLBIA9BsZWaxf5AClJ09AIyg&s",
+      image:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1HoPrEJipgTyLBIA9BsZWaxf5AClJ09AIyg&s",
       name: "Pink Gum",
     },
     {
