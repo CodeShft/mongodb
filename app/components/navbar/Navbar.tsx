@@ -4,7 +4,7 @@ import User from "./User";
 import HamburgerMenu from "./HamburgerMenu";
 import Link from "next/link";
 import Search from "@/app/Search";
-import { HiOutlineUser } from "react-icons/hi"; 
+import { HiOutlineUser } from "react-icons/hi";
 
 const Navbar: React.FC = () => {
   return (
@@ -14,7 +14,7 @@ const Navbar: React.FC = () => {
       </div>
 
       <div className="flex items-center gap-2 ml-auto w-full sm:w-auto md:w-auto">
-        <div className="hidden md:flex items-center gap-x-4 ml-4 flex-grow">
+        <div className="hidden md:flex items-center gap-x-2 ml-0 flex-grow">
           <Link
             href="/login"
             className="text-white hover:text-yellow-500 font-bold px-3 py-2 rounded-md transition duration-300 flex items-center gap-2"
