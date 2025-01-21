@@ -1,7 +1,8 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 
-const stilettos = () => {
+const Stilettos = () => {
+
   const cards = [
     {
       image:
@@ -65,11 +66,11 @@ const stilettos = () => {
 
   return (
     <div className="max-h-screen overflow-auto p-4">
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-2.5">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4">
         {cards.map((card, index) => (
           <div
             key={index}
-            className="bg-white border border-gray-400 rounded-lg p-1 flex flex-col items-center transform transition-transform duration-300 hover:scale-95"
+            className="bg-white border border-gray-400 rounded-lg p-2 flex flex-col items-center transform transition-transform duration-300 hover:scale-95"
           >
             <div className="w-full relative pb-[90%]">
               <img
@@ -89,4 +90,4 @@ const stilettos = () => {
   );
 };
 
-export default stilettos;
+export default Stilettos;

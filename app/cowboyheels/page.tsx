@@ -50,7 +50,7 @@ const cowboyheels: React.FC = () => {
     {
       image:
         "https://i.pinimg.com/736x/58/0a/07/580a07900910a1a1c0fe672d8d3875df.jpg",
-      name: "RockStar",
+      name: "Rock Star",
     },
     {
       image:
