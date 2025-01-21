@@ -50,7 +50,7 @@ const blockwheels = () => {
     },
     {
       image:
-        "https://ragesa.co.za/cdn/shop/files/L_HEELS_32_Y3SLXAA34SUMS_1_800x.jpg?v=1695821181",
+        "https://dynamic.zacdn.com/8jzdK3bOqTB707_zCWczgpwVENI=/filters:quality(70):format(webp)/https://static-ph.zacdn.com/p/london-rag-6607-1114592-1.jpg",
       name: "Brownie",
     },
     {
