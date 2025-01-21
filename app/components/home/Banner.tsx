@@ -27,6 +27,7 @@ const Banner = () => {
     }, 4000);
     return () => clearInterval(interval);
   }, [images.length]);
+
   return (
     <>
       {showModal && (
@@ -69,7 +70,7 @@ const Banner = () => {
         </div>
       )}
       <div className="w-full flex justify-center overflow-hidden py-3">
-        <div className="w-[95%] max-w-[900px] lg:max-w-[1200px] grid grid-cols-3 gap-2">
+        <div className="w-[95%] max-w-[800px] lg:max-w-[1000px] grid grid-cols-3 gap-2">
           {images.map((image, index) => (
             <div
               key={index}
@@ -97,6 +98,7 @@ const Banner = () => {
           ))}
         </div>
       </div>
+      
     </>
   );
 };
