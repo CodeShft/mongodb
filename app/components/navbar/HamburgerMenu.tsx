@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { HiOutlineUser } from "react-icons/hi";
 
 const HamburgerMenu = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -82,6 +83,20 @@ const HamburgerMenu = () => {
                 ))}
               </ul>
             </nav>
+
+            <div className="mb-4 text-center mt-4">
+              <Link
+                href="/login"
+                onClick={() => {
+                  setIsMenuOpen(false);
+                  document.body.style.overflow = "auto";
+                }}
+                className="flex items-center justify-center gap-2 py-3 px-4 text-sm font-medium text-center bg-orange-700 border border-white/10 hover:border-white/50 transition-all duration-300 hover:bg-orange-400 hover:text-white rounded-md focus:bg-orange-500 focus:border-orange-300 active:bg-orange-600 shadow-sm"
+              >
+                <HiOutlineUser className="text-white" />
+                Login
+              </Link>
+            </div>
           </div>
         </div>
       </div>
