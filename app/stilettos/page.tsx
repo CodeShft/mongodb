@@ -3,7 +3,8 @@
 const stilettos = () => {
   const cards = [
     {
-      image: "https://ae01.alicdn.com/kf/S4ccb1bf665e146fbbf6f2138a61de2e3o.jpg",
+      image:
+        "https://ae01.alicdn.com/kf/S4ccb1bf665e146fbbf6f2138a61de2e3o.jpg",
       name: "Shiny Blue",
     },
     {
