@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Link from "next/link";
+import Link from "next/link"; 
 
 const Banner = () => {
   const images = [
@@ -33,7 +33,7 @@ const Banner = () => {
     <>
       {showModal && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-          <div className="bg-white rounded-lg p-6 w-[90%] max-w-md relative drop-shadow-2xl animate-fall-yalpalama">
+          <div className="bg-white rounded-lg p-6 w-[90%] max-w-md relative drop-shadow-2xl animate-fall-tilt">
             <button
               className="absolute top-2 right-2 text-gray-500 hover:text-black text-4xl cursor-pointer transition-all duration-300 ease-in-out transform hover:scale-110"
               onClick={() => setShowModal(false)}
@@ -60,7 +60,7 @@ const Banner = () => {
               Explore our elegant collection of Stilettos. Click any Stiletto to
               learn more!
             </p>
-
+          
             <Link href="/stilettos" passHref>
               <button
                 className="mt-4 bg-purple-600 text-white px-4 py-2 rounded-md block mx-auto relative glow-effect"
