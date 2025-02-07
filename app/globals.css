@@ -27,6 +27,6 @@
 
 @layer utilities {
   .animate-fall-tilt {
-    animation: fallTilt 4s ease-in-out forwards;
+    animation: fallTilt 2s ease-out forwards;
   }
 }
