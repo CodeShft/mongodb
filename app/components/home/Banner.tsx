@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Link from "next/link";
 
 const Banner = () => {
   const images = [
@@ -32,7 +33,7 @@ const Banner = () => {
     <>
       {showModal && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-          <div className="bg-white rounded-lg p-6 w-[90%] max-w-md relative">
+          <div className="bg-white rounded-lg p-6 w-[90%] max-w-md relative drop-shadow-2xl animate-fall-yalpalama">
             <button
               className="absolute top-2 right-2 text-gray-500 hover:text-black text-4xl cursor-pointer transition-all duration-300 ease-in-out transform hover:scale-110"
               onClick={() => setShowModal(false)}
@@ -59,13 +60,16 @@ const Banner = () => {
               Explore our elegant collection of Stilettos. Click any Stiletto to
               learn more!
             </p>
-            <button
-              className="mt-4 bg-purple-600 text-white px-4 py-2 rounded-md block mx-auto relative glow-effect"
-              onClick={() => setShowModal(false)}
-            >
-              Shop Now
-              <span className="absolute inset-0 bg-purple-200 animate-ping duration-2000 rounded-full"></span>
-            </button>
+
+            <Link href="/stilettos" passHref>
+              <button
+                className="mt-4 bg-purple-600 text-white px-4 py-2 rounded-md block mx-auto relative glow-effect"
+                onClick={() => setShowModal(false)}
+              >
+                Shop Now
+                <span className="absolute inset-0 bg-purple-200 animate-ping duration-2000 rounded-full"></span>
+              </button>
+            </Link>
           </div>
         </div>
       )}
@@ -74,7 +78,7 @@ const Banner = () => {
           {images.map((image, index) => (
             <div
               key={index}
-              className="relative rounded-md shadow-sm overflow-hidden"
+              className="relative rounded-md shadow-sm overflow-hidden card-shape"
             >
               <div
                 className={`absolute inset-0 flex items-center justify-center text-white font-bold bg-black bg-opacity-50 transform transition-all duration-1000 ease-in-out ${
@@ -98,7 +102,6 @@ const Banner = () => {
           ))}
         </div>
       </div>
-      
     </>
   );
 };

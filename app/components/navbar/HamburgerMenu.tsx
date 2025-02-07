@@ -61,42 +61,65 @@ const HamburgerMenu = () => {
 
             <nav>
               <ul className="space-y-3">
+                <li className="mb-0">
+                  <Link
+                    href="/login"
+                    onClick={() => {
+                      setIsMenuOpen(false);
+                      document.body.style.overflow = "auto";
+                    }}
+                    className="block py-3 px-4 text-sm font-medium text-center bg-orange-700 border border-white/10 hover:border-white/50 transition-all duration-300 hover:bg-orange-400 hover:text-white rounded-md focus:bg-orange-500 focus:border-orange-300 active:bg-orange-600 shadow-sm w-full flex items-center justify-center"
+                  >
+                    <HiOutlineUser className="text-white inline-block mr-2" />
+                    Login
+                  </Link>
+                </li>
+                <li className="mb-0">
+                  <Link
+                    href="/stilettos"
+                    onClick={() => {
+                      setIsMenuOpen(false);
+                      document.body.style.overflow = "auto";
+                    }}
+                    className="block py-3 px-4 text-sm font-medium text-center bg-orange-700 border border-white/10 hover:border-white/50 transition-all duration-300 hover:bg-orange-400 hover:text-white rounded-md focus:bg-orange-500 focus:border-orange-300 active:bg-orange-600 shadow-sm w-full"
+                  >
+                    Stilettos
+                  </Link>
+                </li>
+
                 {[
-                  ["Stilettos", "/stilettos"],
                   ["Wedge Heels", "/wedgeheels"],
                   ["Block Heels", "/blockheels"],
                   ["Cowboy Heels", "/cowboyheels"],
-                  ["Booties", "/booties"],
                 ].map(([title, url]) => (
-                  <li key={url}>
+                  <li key={url} className="mb-0">
                     <Link
                       href={url}
                       onClick={() => {
                         setIsMenuOpen(false);
                         document.body.style.overflow = "auto";
                       }}
-                      className="block py-3 px-4 text-sm font-medium text-center bg-orange-700 border border-white/10 hover:border-white/50 transition-all duration-300 hover:bg-orange-400 hover:text-white rounded-md focus:bg-orange-500 focus:border-orange-300 active:bg-orange-600 shadow-sm"
+                      className="block py-3 px-4 text-sm font-medium text-center bg-orange-700 border border-white/10 hover:border-white/50 transition-all duration-300 hover:bg-orange-400 hover:text-white rounded-md focus:bg-orange-500 focus:border-orange-300 active:bg-orange-600 shadow-sm w-full"
                     >
                       {title}
                     </Link>
                   </li>
                 ))}
+
+                <li className="mb-0">
+                  <Link
+                    href="/booties"
+                    onClick={() => {
+                      setIsMenuOpen(false);
+                      document.body.style.overflow = "auto";
+                    }}
+                    className="block py-3 px-4 text-sm font-medium text-center bg-orange-700 border border-white/10 hover:border-white/50 transition-all duration-300 hover:bg-orange-400 hover:text-white rounded-md focus:bg-orange-500 focus:border-orange-300 active:bg-orange-600 shadow-sm w-full"
+                  >
+                    Booties
+                  </Link>
+                </li>
               </ul>
             </nav>
-
-            <div className="mb-4 text-center mt-4">
-              <Link
-                href="/login"
-                onClick={() => {
-                  setIsMenuOpen(false);
-                  document.body.style.overflow = "auto";
-                }}
-                className="flex items-center justify-center gap-2 py-3 px-4 text-sm font-medium text-center bg-orange-700 border border-white/10 hover:border-white/50 transition-all duration-300 hover:bg-orange-400 hover:text-white rounded-md focus:bg-orange-500 focus:border-orange-300 active:bg-orange-600 shadow-sm"
-              >
-                <HiOutlineUser className="text-white" />
-                Login
-              </Link>
-            </div>
           </div>
         </div>
       </div>
