@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/footer/Footer";
 
+
 const josefinSans = Josefin_Sans({
   subsets: ["latin"],
   weight: ["700", "700"],
@@ -24,7 +25,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${josefinSans.className} flex flex-col min-h-screen`}>
+      <body className={`${josefinSans.className} flex flex-col `}>
         <Navbar />
         <main className="flex-grow pt-16 pb-16">{children}</main>
         <Footer />

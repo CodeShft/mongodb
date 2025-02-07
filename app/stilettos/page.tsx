@@ -1,10 +1,9 @@
 "use client";
 
-const Stilettos = () => {
+const stilettos = () => {
   const cards = [
     {
-      image:
-        "https://ae01.alicdn.com/kf/S4ccb1bf665e146fbbf6f2138a61de2e3o.jpg",
+      image: "https://ae01.alicdn.com/kf/S4ccb1bf665e146fbbf6f2138a61de2e3o.jpg",
       name: "Shiny Blue",
     },
     {
@@ -64,11 +63,11 @@ const Stilettos = () => {
 
   return (
     <div className="max-h-screen overflow-auto p-4">
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-5">
         {cards.map((card, index) => (
           <div
             key={index}
-            className="bg-white border border-gray-400 rounded-lg p-2 flex flex-col items-center transform transition-transform duration-300 hover:scale-95"
+            className="bg-white border border-gray-400 rounded-lg p-1 flex flex-col items-center transform transition-transform duration-300 hover:scale-95"
           >
             <div className="w-full relative pb-[90%]">
               <img
@@ -88,4 +87,4 @@ const Stilettos = () => {
   );
 };
 
-export default Stilettos;
+export default stilettos;
