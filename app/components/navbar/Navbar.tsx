@@ -5,6 +5,7 @@ import HamburgerMenu from "./HamburgerMenu";
 import Link from "next/link";
 import Search from "@/app/Search";
 import { HiOutlineUser } from "react-icons/hi";
+import { FiShoppingCart } from "react-icons/fi";
 
 const Navbar: React.FC = () => {
   return (
@@ -22,35 +23,30 @@ const Navbar: React.FC = () => {
             <HiOutlineUser className="text-white" />
             Login
           </Link>
-
           <Link
             href="/stilettos"
             className="text-white hover:text-yellow-500 font-bold px-3 py-2 rounded-md transition duration-300"
           >
             Stilettos
           </Link>
-
           <Link
             href="/wedgeheels"
             className="text-white hover:text-yellow-500 font-bold px-3 py-2 rounded-md transition duration-300"
           >
             Wedge Heels
           </Link>
-
           <Link
             href="/blockheels"
             className="text-white hover:text-yellow-500 font-bold px-3 py-2 rounded-md transition duration-300"
           >
             Block Heels
           </Link>
-
           <Link
             href="/cowboyheels"
             className="text-white hover:text-yellow-500 font-bold px-3 py-2 rounded-md transition duration-300"
           >
             Cowboy Heels
           </Link>
-
           <Link
             href="/booties"
             className="text-white hover:text-yellow-500 font-bold px-3 py-2 rounded-md transition duration-300"
@@ -58,14 +54,17 @@ const Navbar: React.FC = () => {
             Booties
           </Link>
         </div>
-
-        <div className="relative w-full sm:w-full md:w-72 ml-4 flex-grow max-w-full">
+        <Link
+          href="/cart"
+          className="text-white hover:text-yellow-500 font-bold px-3 py-2 rounded-md transition duration-300 flex items-center gap-1 ml-2 order-first md:order-none"
+        >
+          <FiShoppingCart className="text-white text-xl" />
+        </Link>
+        <div className="relative w-full sm:w-full md:w-72 ml-4 flex-grow max-w-full order-last md:order-none md:ml-4">
           <Search />
         </div>
-
         <User />
-
-        <div className="md:hidden">
+        <div className="md:hidden order-first">
           <HamburgerMenu />
         </div>
       </div>
