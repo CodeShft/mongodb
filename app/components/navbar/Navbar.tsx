@@ -1,4 +1,5 @@
 "use client";
+
 import Logo from "./Logo";
 import User from "./User";
 import HamburgerMenu from "./HamburgerMenu";
@@ -54,16 +55,20 @@ const Navbar: React.FC = () => {
             Booties
           </Link>
         </div>
+
         <Link
           href="/cart"
           className="text-white hover:text-yellow-500 font-bold px-3 py-2 rounded-md transition duration-300 flex items-center gap-1 ml-2 order-first md:order-none"
         >
           <FiShoppingCart className="text-white text-xl" />
         </Link>
+
         <div className="relative w-full sm:w-full md:w-72 ml-4 flex-grow max-w-full order-last md:order-none md:ml-4">
           <Search />
         </div>
+
         <User />
+
         <div className="md:hidden order-first">
           <HamburgerMenu />
         </div>
