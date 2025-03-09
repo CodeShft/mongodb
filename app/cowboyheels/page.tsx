@@ -1,89 +1,120 @@
 "use client";
-import React from "react";
 
-const cowboyheels: React.FC = () => {
+import { useState } from "react";
+import { PlusCircleIcon } from "@heroicons/react/20/solid";
+
+const cowboyheels = () => {
+  const [cart, setCart] = useState<{ [key: string]: number }>({});
+
   const cards = [
     {
       image:
-        "https://www.plein.com/on/demandware.static/-/Sites-plein-master-catalog/default/dw9029b8c4/images/large/A19S-WSE0376-PLE009N_0201_ses.jpg",
+        "https://static.ticimax.cloud/cdn-cgi/image/width=-,quality=85/41322/uploads/urunresimleri/buyuk/siyah-erkek-kovboy-ayakkabisi-axe--b467-.jpg",
       name: "Bitter",
+      price: "$49.99",
     },
     {
       image:
-        "https://davidkoma.com/cdn/shop/products/DAVIDKOMARE23DKBOOTS06White_01_1024x1024.jpg?v=1679067536",
+        "https://target.scene7.com/is/image/Target/GUEST_f3508d02-9b9a-41a7-a116-a825626ea8ed",
       name: "White Snow",
+      price: "$55.00",
     },
     {
       image:
-        "https://static.ticimax.cloud/cdn-cgi/image/width=-,quality=85/42407/uploads/urunresimleri/buyuk/kinsey-kovboy-bot-beyaz-06f-b1.jpg",
+        "https://footwearnews.com/wp-content/uploads/2024/07/best-cowboy-boots-khaite.png?w=800&h=800&crop=1",
       name: "Black & White",
+      price: "$89.99",
     },
     {
       image:
-        "https://images.vestiairecollective.com/images/resized/w=1024,h=1024,q=75,f=auto,/produit/34515198-1_2.jpg",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDoDKEBi2NHrtVpXeswxu7JCy1oeQ8_IXZKg&s",
       name: "Barbie Cowboy",
+      price: "$69.99",
     },
     {
       image:
-        "https://www.irregularchoice.com/cdn/shop/products/4217-13C-1-Guiding-Light-Irregular-Choice-Pink-Green-Glitter-Cowboy-Western-Style-Cuban-Heel-Short-Boots_11678f63-2284-42e2-bdf7-c26c35ba14ab_200x200.jpg?v=1705335786",
+        "https://i5.walmartimages.com/asr/00c7a2fd-9e20-44a0-adc6-a3e960c6982b.2c6843b9d9aa2c2d1f07ddfdb81e223f.jpeg?odnHeight=2000&odnWidth=2000&odnBg=FFFFFF",
       name: "Butterfly",
+      price: "$75.00",
     },
     {
       image:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8D0ODWnhCHMyYfa4Nng9TyvpARbzhnTyG4w&s",
+        "https://befreeshoes.es/media/catalog/product/cache/7795dbdfd36596b6305e17d7f8387ca6/s/a/sanse-373_snake_bronze-1.jpg",
       name: "Old but Gold",
+      price: "$59.99",
     },
     {
       image:
-        "https://cdn.laredoute.com/cdn-cgi/image/width=650,height=650,fit=pad,dpr=1/products/d/4/4/d444b83c1f8ca8d18f0f9ebee2ffae10.jpg",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8U8VMYaMOIQxbQmLxYJ0AQVBmD2HKYr5b6FK9opgz6xCfGXKQyvaNg_qynEYydrv_2HA&usqp=CAU",
       name: "Brown Eye",
+      price: "$64.99",
     },
     {
-      image:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1HoPrEJipgTyLBIA9BsZWaxf5AClJ09AIyg&s",
+      image: "https://i.ebayimg.com/images/g/R3cAAOSwKKZlE7Lg/s-l1600.jpg",
       name: "Pink Gum",
+      price: "$79.99",
     },
     {
       image:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsJ3-X342fv5SXgTXthnNS2c_66XkD9UGg9A&s",
+        "https://s.alicdn.com/@sc04/kf/H3a4cbfa6e1ca4693bcbeb5144c814abfL.jpg_300x300.jpg",
       name: "Blue Owl",
+      price: "$69.00",
     },
     {
       image:
-        "https://i.pinimg.com/736x/58/0a/07/580a07900910a1a1c0fe672d8d3875df.jpg",
+        "https://cdn.media.amplience.net/i/scvl/161628_354551_1?fmt=auto&w=640",
       name: "Rock Star",
+      price: "$63.00",
     },
     {
       image:
         "https://i5.walmartimages.com/seo/Dingo-Womens-Fine-N-Dandy-Fringe-Studded-Snip-Toe-Casual-Boots-Ankle-Mid-Heel-2-3_936ce384-bde2-46a1-91fe-2c9a97c6f3c5.bbb58248c27f9e9d2c8c6aa85387fe2f.jpeg",
       name: "Yellow Stone",
+      price: "$55.00",
     },
     {
       image:
-        "https://5thave-img-cdn.beyondstyle.us/pf/bb8a7c37-13c4-372a-aa16-b77dd2e2f312.jpg?x-oss-process=style/s1",
+        "https://img4.dhresource.com/webp/m/0x0/f3/albu/jc/n/12/8b5ea7e0-1509-4d03-a103-b48a62ea2dbd.png",
       name: "Orange Juice",
+      price: "$89.99",
     },
   ];
 
+  const handleAddToCart = (name: string) => {
+    setCart((prevCart) => ({
+      ...prevCart,
+      [name]: (prevCart[name] || 0) + 1,
+    }));
+  };
+
   return (
-    <div className="max-h-screen overflow-auto p-4">
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-5">
+    <div className="max-h-screen overflow-auto p-3">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4">
         {cards.map((card, index) => (
           <div
             key={index}
-            className="bg-white border border-gray-400 rounded-lg p-1 flex flex-col items-center transform transition-transform duration-300 hover:scale-95"
+            className="bg-white border border-gray-400 rounded-lg p-1.5 flex flex-col items-center transform transition-transform duration-300 hover:scale-95"
           >
-            <div className="w-full relative pb-[90%]">
+            <div className="w-full relative pb-[80%] sm:pb-[70%] md:pb-[65%]">
               <img
                 src={card.image}
-                alt={`Cowboy Heel: ${card.name}`}
+                alt={`Cowboy Heel ${index + 1}`}
                 className="absolute top-0 left-0 w-full h-full object-cover rounded-md"
               />
             </div>
-            <h3 className="text-sm font-semibold text-gray-700 mt-2">
+            <h3 className="text-base font-semibold text-gray-800 mt-1.5">
               {card.name}
             </h3>
-            <p className="text-[11px] text-gray-500">Detail for {card.name}</p>
+            <p className="text-lg font-bold text-orange-600">{card.price}</p>
+
+            <div className="flex justify-center w-full mt-1.5">
+              <button
+                onClick={() => handleAddToCart(card.name)}
+                className="text-white text-xs bg-green-500 px-2 py-1 rounded-lg hover:bg-green-600 flex items-center"
+              >
+                <PlusCircleIcon className="h-4 w-4 mr-2" /> Add to Cart
+              </button>
+            </div>
           </div>
         ))}
       </div>
