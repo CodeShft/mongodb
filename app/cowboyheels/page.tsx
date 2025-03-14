@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { PlusCircleIcon } from "@heroicons/react/20/solid";
 
-const cowboyheels = () => {
+const Cowboyheels = () => {
   const [cart, setCart] = useState<{ [key: string]: number }>({});
 
   const cards = [
@@ -122,4 +122,4 @@ const cowboyheels = () => {
   );
 };
 
-export default cowboyheels;
+export default Cowboyheels;

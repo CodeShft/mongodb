@@ -4,7 +4,7 @@ import { useState } from "react";
 import { PlusCircleIcon } from "@heroicons/react/20/solid";
 
 
-const stilettos = () => {
+const Stilettos = () => {
   const [cart, setCart] = useState<{ [key: string]: number }>({});
 
   const cards = [
@@ -122,4 +122,4 @@ const stilettos = () => {
   );
 };
 
-export default stilettos;
+export default Stilettos;
