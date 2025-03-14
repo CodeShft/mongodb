@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { PlusCircleIcon } from "@heroicons/react/20/solid";
-
+import Image from "next/image";
 
 const Stilettos = () => {
   const [cart, setCart] = useState<{ [key: string]: number }>({});
@@ -96,10 +96,12 @@ const Stilettos = () => {
             className="bg-white border border-gray-400 rounded-lg p-1.5 flex flex-col items-center transform transition-transform duration-300 hover:scale-95"
           >
             <div className="w-full relative pb-[80%] sm:pb-[70%] md:pb-[65%]">
-              <img
+              <Image
                 src={card.image}
                 alt={`Stiletto ${index + 1}`}
-                className="absolute top-0 left-0 w-full h-full object-contain rounded-md"
+                layout="fill"
+                objectFit="contain"
+                className="absolute top-0 left-0 w-full h-full rounded-md"
               />
             </div>
             <h3 className="text-base font-semibold text-gray-800 mt-1.5">
@@ -117,6 +119,17 @@ const Stilettos = () => {
             </div>
           </div>
         ))}
+      </div>
+
+      <div className="mt-4 p-4 bg-gray-100 rounded-lg">
+        <h2 className="text-xl font-semibold">Your Cart</h2>
+        <ul>
+          {Object.entries(cart).map(([name, quantity]) => (
+            <li key={name} className="text-gray-800">
+              {name} x {quantity}
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   );

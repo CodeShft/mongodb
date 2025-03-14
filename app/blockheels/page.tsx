@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { PlusCircleIcon } from "@heroicons/react/20/solid";
+import Image from "next/image"; // next/image import edilmelidir
 
 const Blockwheels = () => {
   const [_cart, setCart] = useState<{ [key: string]: number }>({});
@@ -95,9 +96,11 @@ const Blockwheels = () => {
             className="bg-white border border-gray-400 rounded-lg p-1.5 flex flex-col items-center transform transition-transform duration-300 hover:scale-95"
           >
             <div className="w-full relative pb-[80%] sm:pb-[70%] md:pb-[65%]">
-              <img
+              {/* img yerine Image bileşeni kullanıyoruz */}
+              <Image
                 src={card.image}
                 alt={`Block Heel ${index + 1}`}
+                layout="fill" // Boyutlandırmayı doldurma yöntemiyle yapıyoruz
                 className="absolute top-0 left-0 w-full h-full object-cover rounded-md"
               />
             </div>

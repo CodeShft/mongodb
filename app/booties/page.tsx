@@ -44,11 +44,13 @@ const Booties = () => {
             className="bg-white border border-gray-400 rounded-lg p-1.5 flex flex-col items-center transform transition-transform duration-300 hover:scale-95"
           >
             <div className="w-full relative pb-[80%] sm:pb-[70%] md:pb-[65%]">
+             
               <Image
                 src={card.image}
                 alt={card.name}
-                layout="fill"
-                objectFit="cover"
+                layout="intrinsic"
+                width={240} 
+                height={240} 
                 className="rounded-md"
               />
             </div>
