@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { PlusCircleIcon } from "@heroicons/react/20/solid";
-import Image from "next/image";
 
 const Stilettos = () => {
   const [cart, setCart] = useState<{ [key: string]: number }>({});
@@ -96,12 +95,10 @@ const Stilettos = () => {
             className="bg-white border border-gray-400 rounded-lg p-1.5 flex flex-col items-center transform transition-transform duration-300 hover:scale-95"
           >
             <div className="w-full relative pb-[80%] sm:pb-[70%] md:pb-[65%]">
-              <Image
+              <img
                 src={card.image}
                 alt={`Stiletto ${index + 1}`}
-                layout="fill"
-                objectFit="contain"
-                className="absolute top-0 left-0 w-full h-full rounded-md"
+                className="absolute top-0 left-0 w-full h-full object-contain rounded-md"
               />
             </div>
             <h3 className="text-base font-semibold text-gray-800 mt-1.5">
