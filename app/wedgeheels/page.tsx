@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { PlusCircleIcon } from "@heroicons/react/20/solid";
 
-const BlockHeels = () => {
+const wedgeheels = () => {
   const [cart, setCart] = useState<{ [key: string]: number }>({});
 
   const cards = [
@@ -123,4 +123,4 @@ const BlockHeels = () => {
   );
 };
 
-export default BlockHeels;
+export default wedgeheels;
