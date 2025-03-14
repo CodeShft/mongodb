@@ -3,8 +3,8 @@
 import { useState } from "react";
 import { PlusCircleIcon } from "@heroicons/react/20/solid";
 
-const blockwheels = () => {
-  const [cart, setCart] = useState<{ [key: string]: number }>({});
+const Blockwheels = () => {
+  const [_cart, setCart] = useState<{ [key: string]: number }>({});
 
   const cards = [
     {
@@ -121,4 +121,4 @@ const blockwheels = () => {
   );
 };
 
-export default blockwheels;
+export default Blockwheels;
