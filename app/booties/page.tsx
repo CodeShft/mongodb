@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import { PlusCircleIcon } from "@heroicons/react/20/solid";
 
 const Booties = () => {
@@ -44,14 +43,11 @@ const Booties = () => {
             className="bg-white border border-gray-400 rounded-lg p-1.5 flex flex-col items-center transform transition-transform duration-300 hover:scale-95"
           >
             <div className="w-full relative pb-[80%] sm:pb-[70%] md:pb-[65%]">
-             
-              <Image
+          
+              <img
                 src={card.image}
                 alt={card.name}
-                layout="intrinsic"
-                width={240} 
-                height={240} 
-                className="rounded-md"
+                className="rounded-md w-full h-full object-cover"
               />
             </div>
             <h3 className="text-base font-semibold text-gray-800 mt-1.5">
