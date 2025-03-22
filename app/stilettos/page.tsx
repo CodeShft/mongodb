@@ -15,7 +15,7 @@ const Stilettos = () => {
     },
     {
       image:
-        "https://www.aooar.com/cdn/shop/products/2_8e3e7971-71ce-4c02-89e9-454ed8ee1971_300x300.jpg?v=1619335962",
+        "https://www.fuss-schuhe-shop.de/WebRoot/Store25/Shops/64752260/5B19/291A/26DD/65A3/3024/0A0C/6D07/C0A4/Sa-Alina-petrol-blue-matte_1.jpg",
       name: "Matte Blue",
       price: "$65.00",
     },
@@ -95,6 +95,7 @@ const Stilettos = () => {
             className="bg-white border border-gray-400 rounded-lg p-1.5 flex flex-col items-center transform transition-transform duration-300 hover:scale-95"
           >
             <div className="w-full relative pb-[80%] sm:pb-[70%] md:pb-[65%]">
+            
               <img
                 src={card.image}
                 alt={`Stiletto ${index + 1}`}
@@ -117,19 +118,9 @@ const Stilettos = () => {
           </div>
         ))}
       </div>
-
-      <div className="mt-4 p-4 bg-gray-100 rounded-lg">
-        <h2 className="text-xl font-semibold">Your Cart</h2>
-        <ul>
-          {Object.entries(cart).map(([name, quantity]) => (
-            <li key={name} className="text-gray-800">
-              {name} x {quantity}
-            </li>
-          ))}
-        </ul>
-      </div>
     </div>
   );
 };
+
 
 export default Stilettos;
