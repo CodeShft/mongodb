@@ -1,10 +1,10 @@
 import React from "react";
 
-interface CartItem {
-  name: string;
-  price: string;
-  quantity: number;
-}
+// interface CartItem {
+//   name: string;
+//   price: string;
+//   quantity: number;
+// }
 
 interface CartProps {
   cart: { [key: string]: number };

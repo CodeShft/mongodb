@@ -5,7 +5,6 @@ import { PlusCircleIcon, MinusCircleIcon } from "@heroicons/react/20/solid";
 
 const Stilettos = () => {
   const [cart, setCart] = useState<{ [key: string]: number }>({});
-  const [isCheckout, setIsCheckout] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
 
   const cards = [
