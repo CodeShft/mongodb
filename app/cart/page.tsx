@@ -19,7 +19,7 @@ const Cart: React.FC<CartProps> = ({
   handleRemove,
   handleUpdateQuantity,
 }) => {
-  // Filter items that are in the cart
+  
   const cartItems = items.filter(item => cart[item.name] > 0);
 
   return (
