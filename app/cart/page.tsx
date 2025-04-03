@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 interface CartItem {
   name: string;
@@ -8,12 +8,18 @@ interface CartItem {
 
 interface CartProps {
   cart: { [key: string]: number };
-  items: Array<{ name: string; price: string }> | undefined; 
+  items: Array<{ name: string; price: string }> | undefined;
   handleRemove: (name: string) => void;
   handleUpdateQuantity: (name: string, quantity: number) => void;
 }
 
-const Cart: React.FC<CartProps> = ({ cart, items = [], handleRemove, handleUpdateQuantity }) => { 
+const Cart: React.FC<CartProps> = ({
+  cart,
+  items = [],
+  handleRemove,
+  handleUpdateQuantity,
+}) => {
+  // Filter items that are in the cart
   const cartItems = items.filter(item => cart[item.name] > 0);
 
   return (

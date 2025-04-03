@@ -1,83 +1,85 @@
 "use client";
 
 import { useState } from "react";
-import { PlusCircleIcon } from "@heroicons/react/20/solid";
+import { PlusCircleIcon, MinusCircleIcon } from "@heroicons/react/20/solid";
 
 const Wedgeheels = () => {
   const [cart, setCart] = useState<{ [key: string]: number }>({});
+  const [isCheckout, setIsCheckout] = useState(false);
+  const [isCartOpen, setIsCartOpen] = useState(false);
 
   const cards = [
     {
       image:
         "https://chaniibshoes.com/cdn/shop/products/IMG_6947.jpg?v=1591658892",
       name: "Orange Dream",
-      price: "$49.99",
+      price: 49.99,
     },
     {
       image:
         "https://label-source.co.uk/cdn/shop/files/IMG_3017-Photoroom_03159ad5-711c-4cbd-9ad3-91fbb9ae34bd.jpg?v=1731084338",
       name: "Cool Black",
-      price: "$55.00",
+      price: 55.0,
     },
     {
       image:
-        "https://aprajitatoor.com/wp-content/uploads/2023/04/Blue-Half-wedge-heels-side.jpg",
+        "https://i1.adis.ws/i/truworths/prod3192978_1.jpeg",
       name: "Shade of Black",
-      price: "$89.99",
+      price: 89.99,
     },
     {
       image:
         "https://5.imimg.com/data5/LS/GX/MY-5862168/pink-fancy-party-wear-wedges-heels-for-women-500x500.png",
       name: "Barbie Pink",
-      price: "$69.99",
+      price: 69.99,
     },
     {
       image:
         "https://image.made-in-china.com/202f0j00sYcoLHJlrnpq/10-Cm-Wedge-High-Heels-Female-Shoes-New-Pointy-Patent-Leather-All-Matching-Wedge-Heel-Pump-Shoes-for-Women.webp",
       name: "Cool Lime",
-      price: "$75.00",
+      price: 75.0,
     },
     {
       image:
         "https://target.scene7.com/is/image/Target/GUEST_9c50f71e-006a-4ed4-8a9f-355338b1ed61?wid=488&hei=488&fmt=pjpeg",
       name: "Sparkling",
-      price: "$59.99",
+      price: 59.99,
     },
     {
       image:
         "https://images.vestiairecollective.com/images/resized/w=1246,q=75,f=auto,/produit/purple-leather-bottega-veneta-heels-44767604-1_2.jpg",
       name: "Snake Purple",
-      price: "$64.99",
+      price: 64.99,
     },
     {
       image:
-        "https://sreeleathers.com/cdn/shop/files/04446_490_2copy_800x.jpg?v=1720880734",
+        "https://saintg.us/cdn/shop/files/1_539447b8-c7a5-44da-93f6-3121ac03bf3f.jpg?v=1719060141&width=1080",
       name: "Purple Life",
-      price: "$79.99",
+      price: 79.99,
     },
     {
       image:
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9T-FKy-DL_oEIquOpYvy2_oG60As6cr2kfA&s",
       name: "Elegant Blue",
-      price: "$69.00",
+      price: 69.0,
     },
     {
       image:
         "https://5.imimg.com/data5/SELLER/Default/2022/4/KU/LB/PB/151158092/san126-gy-1--500x500.jpg",
       name: "White Pearl",
-      price: "$63.00",
+      price: 63.0,
     },
     {
       image:
         "https://thecaistore.com/cdn/shop/files/Flower2V2_720x.jpg?v=1708942354",
       name: "Yellow Party",
-      price: "$55.00",
+      price: 55.0,
     },
     {
       image:
         "https://boho-mood.com/cdn/shop/files/boho-wedge-sandals-rainbow-29850677805254_2000x.jpg?v=1732468989",
       name: "Rainbow",
-      price: "$89.99",
+      price: 89.99,
     },
   ];
 
@@ -88,38 +90,124 @@ const Wedgeheels = () => {
     }));
   };
 
-  return (
-    <div className="max-h-screen overflow-auto p-3">
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4">
-        {cards.map((card, index) => (
-          <div
-            key={index}
-            className="bg-white border border-gray-400 rounded-lg p-1.5 flex flex-col items-center transform transition-transform duration-300 hover:scale-95"
-          >
-            <div className="w-full relative pb-[80%] sm:pb-[70%] md:pb-[65%]">
-             
-              <img
-                src={card.image}
-                alt={`Wedge Heel: ${card.name}`}
-                className="absolute top-0 left-0 w-full h-full object-cover rounded-md"
-              />
-            </div>
-            <h3 className="text-base font-semibold text-gray-800 mt-1.5">
-              {card.name}
-            </h3>
-            <p className="text-lg font-bold text-orange-600">{card.price}</p>
+  const handleRemoveFromCart = (name: string) => {
+    const newCart = { ...cart };
+    delete newCart[name];
+    setCart(newCart);
+  };
 
-            <div className="flex justify-center w-full mt-1.5">
+  const handleUpdateQuantity = (name: string, quantity: number) => {
+    if (quantity <= 0) {
+      handleRemoveFromCart(name);
+    } else {
+      setCart((prevCart) => ({
+        ...prevCart,
+        [name]: quantity,
+      }));
+    }
+  };
+
+  const calculateTotal = () => {
+    return Object.keys(cart).reduce((total, name) => {
+      const item = cards.find((card) => card.name === name);
+      if (item) {
+        total += item.price * cart[name];
+      }
+      return total;
+    }, 0);
+  };
+
+  return (
+    <div className="flex">
+      <div className="max-h-screen overflow-auto p-3 flex-1">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4">
+          {cards.map((card, index) => (
+            <div
+              key={index}
+              className="bg-white border border-gray-400 rounded-lg p-2 flex flex-col items-center transform transition-transform duration-300 hover:scale-105 shadow-lg"
+            >
+              <div className="w-full relative pb-[80%] sm:pb-[70%] md:pb-[65%]">
+                <img
+                  src={card.image}
+                  alt={`Stiletto ${index + 1}`}
+                  className="absolute top-0 left-0 w-full h-full object-contain rounded-md"
+                />
+              </div>
+              <h3 className="text-base font-semibold text-gray-800 mt-2 text-center">
+                {card.name}
+              </h3>
+              <p className="text-lg font-bold text-orange-600">${card.price}</p>
+
+              <div className="flex justify-center w-full mt-1.5">
+                <button
+                  onClick={() => handleAddToCart(card.name)}
+                  className="text-white text-xs bg-green-500 px-4 py-2 rounded-lg hover:bg-green-600 flex items-center"
+                >
+                  <PlusCircleIcon className="h-4 w-4 mr-2" /> Add to Cart
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div
+        className={`w-full md:w-1/4 bg-gray-100 p-4 fixed right-0 top-0 bottom-0 z-50 md:relative ${
+          isCartOpen ? "block" : "hidden md:block"
+        }`}
+      >
+        <h2 className="font-semibold text-lg mb-4">Shopping Cart</h2>
+        {Object.keys(cart).map((itemName) => {
+          const item = cards.find((card) => card.name === itemName);
+          return item ? (
+            <div
+              key={itemName}
+              className="flex justify-between items-center mb-3 border-b border-gray-300 pb-3"
+            >
+              <span className="w-1/2 text-sm">{item.name}</span>
+              <div className="flex items-center space-x-2">
+                <button
+                  onClick={() =>
+                    handleUpdateQuantity(itemName, cart[itemName] - 1)
+                  }
+                  className="text-gray-700"
+                >
+                  <MinusCircleIcon className="h-4 w-4" />
+                </button>
+                <span>{cart[itemName]}</span>
+                <button
+                  onClick={() =>
+                    handleUpdateQuantity(itemName, cart[itemName] + 1)
+                  }
+                  className="text-gray-700"
+                >
+                  <PlusCircleIcon className="h-4 w-4" />
+                </button>
+              </div>
+              <span className="w-1/3 text-right mr-4">
+                ${(item.price * cart[itemName]).toFixed(2)}
+              </span>
               <button
-                onClick={() => handleAddToCart(card.name)}
-                className="text-white text-xs bg-green-500 px-2 py-1 rounded-lg hover:bg-green-600 flex items-center"
+                onClick={() => handleRemoveFromCart(itemName)}
+                className="text-red-600"
               >
-                <PlusCircleIcon className="h-4 w-4 mr-2" /> Add to Cart
+                Remove
               </button>
             </div>
-          </div>
-        ))}
+          ) : null;
+        })}
+        <div className="mt-4 flex justify-between items-center">
+          <span className="font-semibold">Total:</span>
+          <span className="font-semibold">${calculateTotal().toFixed(2)}</span>
+        </div>
       </div>
+
+      <button
+        className="block md:hidden fixed bottom-4 right-4 bg-blue-500 text-white p-3 rounded-full"
+        onClick={() => setIsCartOpen(!isCartOpen)}
+      >
+        Cart
+      </button>
     </div>
   );
 };
