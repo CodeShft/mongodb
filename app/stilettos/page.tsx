@@ -9,8 +9,7 @@ const Stilettos = () => {
 
   const cards = [
     {
-      image:
-        "https://ae01.alicdn.com/kf/S4ccb1bf665e146fbbf6f2138a61de2e3o.jpg",
+      image: "https://ae01.alicdn.com/kf/S4ccb1bf665e146fbbf6f2138a61de2e3o.jpg",
       name: "Shiny Blue",
       price: 79.99,
     },
@@ -85,6 +84,10 @@ const Stilettos = () => {
       ...prevCart,
       [name]: (prevCart[name] || 0) + 1,
     }));
+
+    if (!isCartOpen) {
+      setIsCartOpen(true);
+    }
   };
 
   const handleRemoveFromCart = (name: string) => {
@@ -115,15 +118,22 @@ const Stilettos = () => {
   };
 
   return (
-    <div className="flex">
-      <div className="max-h-screen overflow-auto p-3 flex-1">
+    <div className="flex flex-col md:flex-row relative">
+      {isCartOpen && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-50 z-40 md:hidden"
+          onClick={() => setIsCartOpen(false)}
+        ></div>
+      )}
+
+      <div className="p-7 flex-1">
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4">
           {cards.map((card, index) => (
             <div
               key={index}
               className="bg-white border border-gray-400 rounded-lg p-2 flex flex-col items-center transform transition-transform duration-300 hover:scale-105 shadow-lg"
             >
-              <div className="w-full relative pb-[80%] sm:pb-[70%] md:pb-[65%]">
+              <div className="w-full relative pb-[70%] sm:pb-[70%] md:pb-[55%]">
                 <img
                   src={card.image}
                   alt={`Stiletto ${index + 1}`}
@@ -149,11 +159,18 @@ const Stilettos = () => {
       </div>
 
       <div
-        className={`w-full md:w-1/4 bg-gray-100 p-4 fixed right-0 top-0 bottom-0 z-50 md:relative ${
-          isCartOpen ? "block" : "hidden md:block"
+        className={`w-full bg-gray-300 bg-opacity-90 p-4 fixed left-0 top-0 z-50 rounded-b-xl shadow-xl transform transition-all duration-500 ease-in-out ${
+          isCartOpen ? "translate-y-0" : "-translate-y-full"
         }`}
       >
-        <h2 className="font-semibold text-lg mb-4">Shopping Cart</h2>
+        <div className="relative flex items-center justify-between border-b border-gray-400 pb-2 mb-3">
+          <button
+            onClick={() => setIsCartOpen((prevState) => !prevState)}
+            className="font-semibold text-sm text-red-600 bg-red-200 p-2 rounded-xl cursor-pointer hover:underline transition-all"
+          >
+            Shopping Cart
+          </button>
+        </div>
         {Object.keys(cart).map((itemName) => {
           const item = cards.find((card) => card.name === itemName);
           return item ? (
@@ -161,7 +178,7 @@ const Stilettos = () => {
               key={itemName}
               className="flex justify-between items-center mb-3 border-b border-gray-300 pb-3"
             >
-              <span className="w-1/2 text-sm">{item.name}</span>
+              <span className="w-1/4 text-sm">{item.name}</span>
               <div className="flex items-center space-x-2">
                 <button
                   onClick={() =>
@@ -181,32 +198,26 @@ const Stilettos = () => {
                   <PlusCircleIcon className="h-4 w-4" />
                 </button>
               </div>
-              <span className="w-1/3 text-right mr-4">
+              <span className="w-1/3 text-right mr-2 text-sm">
                 ${(item.price * cart[itemName]).toFixed(2)}
               </span>
               <button
                 onClick={() => handleRemoveFromCart(itemName)}
-                className="text-red-600"
+                className="text-red-600 text-xs"
               >
                 Remove
               </button>
             </div>
           ) : null;
         })}
-        <div className="mt-4 flex justify-between items-center">
+        <div className="mt-4 flex justify-between items-center text-sm">
           <span className="font-semibold">Total:</span>
           <span className="font-semibold">${calculateTotal().toFixed(2)}</span>
         </div>
       </div>
-
-      <button
-        className="block md:hidden fixed bottom-4 right-4 bg-blue-500 text-white p-3 rounded-full"
-        onClick={() => setIsCartOpen(!isCartOpen)}
-      >
-        Cart
-      </button>
     </div>
   );
 };
+
 
 export default Stilettos;
