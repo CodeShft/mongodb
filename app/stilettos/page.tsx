@@ -15,7 +15,7 @@ const Stilettos = () => {
     },
     {
       image:
-        "https://www.fuss-schuhe-shop.de/WebRoot/Store25/Shops/64752260/5B19/291A/26DD/65A3/3024/0A0C/6D07/C0A4/Sa-Alina-petrol-blue-matte_1.jpg",
+        "https://m.media-amazon.com/images/I/611-AkA658L._AC_UY900_.jpg",
       name: "Matte Blue",
       price: 65.0,
     },
@@ -39,13 +39,13 @@ const Stilettos = () => {
     },
     {
       image:
-        "https://cdn-2.jjshouse.com/upimg/s400/6b/69/e3168499c96a94fdf64e711591246b69.jpg",
+        "https://m.media-amazon.com/images/I/6146xzy1EhL.jpg",
       name: "Sparkling",
       price: 99.99,
     },
     {
       image:
-        "https://assets.ajio.com/medias/sys_master/root/20230602/wF7B/64796d9e42f9e729d7141d58/-473Wx593H-461888136-pink-MODEL.jpg",
+        "https://akn-desa.a-cdn.akinoncloud.com/products/2022/10/14/179805/a3676020-c1e1-4eac-8067-7c4daca73404_size1500x1500_quality100_cropCenter.jpg",
       name: "Pink",
       price: 75.0,
     },
